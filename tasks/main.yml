@@ -1,0 +1,17 @@
+---
+- name: Install git RedHat/CentOS
+  yum:
+    name: git
+    state: "{{ git_package_state }}"
+  retries: 3
+  delay: 5
+  when: ansible_os_family == 'RedHat'
+
+- name: Install git Debian/Ubuntu
+  apt:
+    name: git
+    state: "{{ git_package_state }}"
+    update_cache: yes
+  retries: 3
+  delay: 5
+  when: ansible_os_family == 'Debian'

@@ -1,0 +1,31 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: git
+  description: Install git
+  author: Dragomir Radovanovic
+  company: Content Insights EAD
+
+  license: license (GPLv3)
+
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Debian 
+      versions:
+        - jessie
+        - stretch
+    - name: Ubuntu
+      versions:
+        - artful
+        - bionic
+        - yakkety
+        - xenial
+        - zesty
+
+  galaxy_tags:
+    - git
