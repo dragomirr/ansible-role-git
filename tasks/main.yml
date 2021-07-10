@@ -1,5 +1,6 @@
 ---
 - name: Install git RedHat/CentOS
+  become: yes
   yum:
     name: git
     state: "{{ git_package_state }}"
@@ -8,6 +9,7 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Install git Debian/Ubuntu
+  become: yes
   apt:
     name: git
     state: "{{ git_package_state }}"
@@ -15,3 +17,15 @@
   retries: 3
   delay: 5
   when: ansible_os_family == 'Debian'
+
+- name: Clone repository
+  diff: no
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    version: "{{ item.version }}"
+    accept_hostkey: "{{ item.accept_hostkey | default(omit) }}"
+    key_file: "{{ item.key_file | default(omit)}}"
+    single_branch: "{{ item.single_branch | default(omit) }}"
+    track_submodules: "{{ item.track_submodules | default(omit) }}"
+  loop: "{{ git_repo }}"

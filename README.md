@@ -8,6 +8,21 @@ Install git on RedHat/CentOS or Debian/Ubuntu distros.
 
 None.
 
+## Role variables
+
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+    git_repo: []
+
+Minimal config:
+
+    git_repo:
+        - repo: https://github.com/some-repo
+          dest: /some/directory
+          version: main
+
+For more options look at `Clone repository` task in `tasks/main.yml`.
+
 ## Dependencies
 
 None.
