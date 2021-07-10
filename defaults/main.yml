@@ -1,2 +1,6 @@
 ---
 git_package_state: present
+git_repo: []
+# - repo: https://github.com/some-repo
+#   version: main
+#   dest: /some/dest/directory
