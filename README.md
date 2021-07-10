@@ -2,6 +2,8 @@
 
 Install git on RedHat/CentOS or Debian/Ubuntu distros.
 
+[CHANGELOG](./CHANGELOG.md)
+
 ## Requirements
 
 None.
