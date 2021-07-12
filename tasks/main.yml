@@ -28,4 +28,5 @@
     key_file: "{{ item.key_file | default(omit)}}"
     single_branch: "{{ item.single_branch | default(omit) }}"
     track_submodules: "{{ item.track_submodules | default(omit) }}"
+    force: "{{ item.force | default(omit) }}"
   loop: "{{ git_repo }}"
